@@ -1,14 +1,8 @@
-import "./App.css";
+import { Header } from "./components/Header";
 
 const App = () => {
   return (
-    <main>
-      <nav className="navegador">
-        <a href="">Clientes</a>
-        <a href="">Productos</a>
-        <a href="">Sedes</a>
-      </nav>
-    </main>
+      <Header />
   );
 };
 export default App;
