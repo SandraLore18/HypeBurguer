@@ -1,7 +1,7 @@
-import { Nav } from './Nav'
+import { TitleHype } from './TitleHype'
 
 export const Header = () => {
     return <header className='bg-slate-500'>
-        <Nav />
+        <TitleHype></TitleHype>
     </header>
 }

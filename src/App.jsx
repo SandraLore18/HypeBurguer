@@ -1,8 +1,6 @@
-import { Header } from "./components/Header";
+import { IndexRouter } from "./routes/index.routes";
 
 const App = () => {
-  return (
-      <Header />
-  );
+  return <IndexRouter />
 };
 export default App;
