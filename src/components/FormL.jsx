@@ -1,5 +1,6 @@
-import { login } from "../request";
+import { login } from "../api/Auth";
 import { useRef, useState } from "react";
+
 export const FormL = () => {
   const [error, setError ] = useState("")
   const formLogin = useRef(null);
@@ -8,7 +9,7 @@ export const FormL = () => {
     try {
       const arrayForm = new FormData(formLogin.current);
       const { email, password } = Object.fromEntries([...arrayForm.entries()]);
-      console.log(await login(email, password));
+      await login(email, password);
     } catch (error) {
       if (error.message === "Request failed with status code 400") {
         setError("Contraseña incorrecta")
@@ -19,7 +20,7 @@ export const FormL = () => {
   return (
     <>
     <h2>{error}</h2>
-    <form onSubmit={preventF} ref={formLogin}>
+    <form onSubmit = {preventF} ref={formLogin}>
       <label htmlFor="Login">Email</label>
       <input type="email" name="email" placeholder="Email" />
       <label htmlFor="Login">Password</label>
